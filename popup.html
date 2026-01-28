@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="css/popup.css" rel="stylesheet">
+        <link href="css/button.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="logo" style="padding-left: 5%;justify-content: center;">
+            <h2>元素定位助手 v10.1</h2>
+        </div>
+        <div class="container">
+            <div class="main">
+                <div class="spinner">
+                    <hr>
+
+                    <div class="div_kaiguan">
+                        <span class="span_kaiguan">插件启停 (Alt+E)</span>
+                        <label class="switch">
+                            <input id="plugin_enabled_switch" class="kaiguan" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <hr>
+                    <p>使用帮助:按F8 复制鼠标所在处元素语法</p>
+                    <p>使用帮助:按F9 深度扫描 定位动态元素</p>
+                    <div>
+                        信息展示窗口当前状态 <span id="ceshi">...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/popup.js"></script>
+    </body>
+</html>

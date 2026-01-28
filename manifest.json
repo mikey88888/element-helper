@@ -1,0 +1,52 @@
+{
+    "manifest_version": 3,
+    "name": "元素定位助手",
+    "version": "10.1",
+    "description": "v10.1 - 元素定位助手，支持 XPath/CSS 选择器验证和高亮，Alt+E 启停插件，Alt+O 打开面板",
+    "permissions":
+	[
+		"contextMenus",
+		"tabs",
+		"notifications",
+		"webRequest",
+
+		"storage",
+        "activeTab",
+        "scripting"
+
+
+	],
+    "icons": {
+		"128": "img/icon.png",
+		"48": "img/icon.png",
+		"19": "img/icon.png"
+	},
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["js/jquery-3.7.1.min.js","js/jquery-ui.js","operation_panel.js","content.js","tool.js","v10_1_enhancements.js","iframe_handler.js","code_generator.js"],
+            "css": ["content.css","operation_panel.css","css/jquery-ui.css"],
+            "run_at": "document_end",
+            "all_frames": true,
+            "match_about_blank": true
+        }
+    ],
+    "host_permissions": [
+        "<all_urls>"
+      ],
+      "web_accessible_resources": [
+        {
+            "resources": ["js/inject.js", "*"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+      "action": {
+        "default_popup": "popup.html"
+
+    },
+    "background": {
+        "service_worker": "background.js"
+      }
+
+
+}
